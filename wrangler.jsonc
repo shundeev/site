@@ -3,11 +3,10 @@
   "name": "shundeev-dev",
   "compatibility_date": "2026-11-01",
 
-  // Static site only: no Worker script, Cloudflare serves dist/ directly.
+  // Static site only: no Worker script, Cloudflare serves public/ directly.
   "assets": {
-    "directory": "./dist",
-    "html_handling": "auto-trailing-slash",
-    "not_found_handling": "404-page"
+    "directory": "./public",
+    "html_handling": "auto-trailing-slash"
   },
 
   // Attaches the apex domain; Cloudflare creates the DNS record and certificate.

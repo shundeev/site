@@ -1,7 +1,7 @@
 {
   "name": "shundeev-dev",
   "private": true,
-  "description": "Deploy tooling for shundeev.dev. The site itself is built with Babashka (bb build).",
+  "description": "Deploy tooling for shundeev.dev: wrangler serves public/ as static assets.",
   "devDependencies": {
     "wrangler": "4.159.0"
   }
