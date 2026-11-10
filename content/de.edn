@@ -1,0 +1,69 @@
+{:lang-name   "Deutsch"
+ :locale      "de_DE"
+ :title       "Egor Shundeev, Fullstack-Entwickler"
+ :description "Egor Shundeev ist Fullstack-Entwickler in Berlin und baut Webanwendungen mit Clojure und ClojureScript."
+
+ :name      ["Egor" "Shundeev"]
+ :job-title "Fullstack-Entwickler"
+
+ :lede  "Ich bin Fullstack-Entwickler in Berlin. Ich baue Webanwendungen mit Clojure und ClojureScript: datenintensive Oberflächen, Offline-first-Apps und die Dienste dahinter."
+ :intro "Angefangen habe ich mit Firmware für Mikrocontroller in C. Wichtig ist mir bis heute dasselbe: wenige bewegliche Teile, vorhersehbarer Zustand und Software, die weiterläuft, wenn das Netz ausfällt."
+
+ :ui {:skip      "Zum Inhalt springen"
+      :languages "Sprache"
+      :present   "heute"
+      :email     "E-Mail"}
+
+ :sections {:work      "Berufserfahrung"
+            :skills    "Kenntnisse"
+            :education "Ausbildung"
+            :spoken    "Sprachen"
+            :contact   "Kontakt"}
+
+ :jobs {:independent
+        {:org    "Eigenes Projekt"
+         :role   "Entwickler"
+         :place  "Berlin"
+         :points ["Konzeption und Entwicklung einer Offline-first-PWA zum Deutschlernen: lokale Datenhaltung in SQLite, Synchronisation über CouchDB und PouchDB, Backend in Clojure, automatisiertes Deployment und KI-generierte Übungen, die sich an den Lernstand anpassen."]}
+
+        :freshcode
+        {:role   "Clojure-Entwickler"
+         :place  "Berlin"
+         :points ["Oberflächen für biomedizinische Daten mit ClojureScript, Reagent und Plotly.js entwickelt."
+                  "Eine zentrale Anwendungsoberfläche auf Basis von re-frame und reitit neu aufgebaut, mit wiederverwendbaren Komponenten und malli-Schemas."
+                  "Eine komplexe Tabellenkomponente entworfen und Code-Reviews mit Fokus auf Wartbarkeit geleitet."
+                  "Eine Hypermedia-Oberfläche mit HTMX und Clojure ausgeliefert, die den Großteil der Client-Logik überflüssig machte und den Build vereinfachte."
+                  "Fünf Entwickler eingearbeitet und betreut; ein dreiköpfiges Team für die Automatisierung der Dokumentenverarbeitung geleitet."]}
+
+        :health-samurai
+        {:role   "Softwareentwickler"
+         :place  "Moskau"
+         :points ["Anwendungen für das Gesundheitswesen auf Basis von Aidbox (FHIR) in Clojure entwickelt, Clients mit ClojureScript und re-frame."
+                  "Kubernetes-Infrastruktur in der Google Cloud aufgesetzt."]}
+
+        :fogstream
+        {:role   "Embedded-Softwareentwickler"
+         :place  "Chabarowsk"
+         :points ["Firmware in C und C++ für Mikrocontroller und SoCs: Treiber, Anbindung von Peripherie, Optimierung von Laufzeit und Speicher, Test- und Debug-Werkzeuge."]}}
+
+ :skills {:languages "Programmiersprachen"
+          :frontend  "Frontend"
+          :backend   "Backend und Daten"
+          :infra     "Infrastruktur"
+          :also      "Außerdem"}
+
+ :education {:degree "Master in Nanoelektronik"
+             :school "Staatliche Universität Komsomolsk am Amur"}
+
+ :spoken [["Russisch"  "Muttersprache"]
+          ["Englisch"  "fließend"]
+          ["Deutsch"   "B2"]]
+
+ :contact {:text  "Am schnellsten erreichen Sie mich per E-Mail. Ich lese jede Nachricht und antworte innerhalb weniger Tage."
+           :place "Berlin, Deutschland"}
+
+ :footer "Gebaut mit Babashka und Hiccup, gehostet bei Cloudflare."
+
+ :not-found {:title "Seite nicht gefunden"
+             :text  "Unter dieser Adresse gibt es nichts."
+             :home  "Zur Startseite"}}

@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "shundeev-dev",
+  "compatibility_date": "2026-11-01",
+
+  // Static site only: no Worker script, Cloudflare serves dist/ directly.
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+
+  // Attaches the apex domain; Cloudflare creates the DNS record and certificate.
+  "routes": [
+    { "pattern": "shundeev.dev", "custom_domain": true }
+  ]
+}

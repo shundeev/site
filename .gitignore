@@ -1,0 +1,6 @@
+/dist/
+/node_modules/
+/.wrangler/
+/.cpcache/
+/.lsp/.cache/
+/.clj-kondo/.cache/

@@ -1,0 +1,26 @@
+;; Facts shared by every language. Translated text lives in content/<lang>.edn
+;; and is merged in by :id.
+{:url    "https://shundeev.dev"
+ :domain "shundeev.dev"
+
+ ;; First language is served at /, the rest at /<lang>/.
+ :langs [:en :de :ru]
+
+ ;; Cloudflare Email Routing forwards it to the personal inbox.
+ :email "egor@shundeev.dev"
+ :links [{:id :github   :label "GitHub"   :href "https://github.com/u473t8"}
+         {:id :linkedin :label "LinkedIn" :href "https://www.linkedin.com/in/egor-shundeev"}]
+
+ ;; :to nil means "until now".
+ :jobs [{:id :independent    :from 2024 :to nil}
+        {:id :freshcode      :from 2021 :to 2024 :org "FRESHCODE"      :href "https://www.freshcodeit.com"}
+        {:id :health-samurai :from 2020 :to 2021 :org "Health Samurai" :href "https://www.health-samurai.io"}
+        {:id :fogstream      :from 2016 :to 2020 :org "Fogstream"}]
+
+ :skills [{:id :languages :items ["Clojure" "ClojureScript" "JavaScript" "Java" "SQL" "C/C++"]}
+          {:id :frontend  :items ["Reagent" "re-frame" "React" "HTMX" "Plotly.js" "PWA" "Service Workers"]}
+          {:id :backend   :items ["reitit" "malli" "PostgreSQL" "SQLite" "CouchDB/PouchDB" "REST"]}
+          {:id :infra     :items ["Docker" "Kubernetes" "Google Cloud" "GitHub Actions" "Linux" "systemd" "Babashka"]}
+          {:id :also      :items ["Claude Code" "OpenCode" "Figma"]}]
+
+ :education {:year 2013}}
