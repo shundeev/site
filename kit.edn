@@ -1,0 +1,5 @@
+;; dev-kit settings for this project, read by .shared/bin/kit (see .shared/README.md).
+{:repo     "shundeev/site"
+ :showcase "Site"
+ ;; #{:clojure} adds the shared zprint/clj-kondo setup and Clojure rules
+ :modules  #{}}

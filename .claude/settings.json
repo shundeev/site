@@ -1,0 +1,123 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git status *)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git show *)",
+      "Bash(git branch *)",
+      "Bash(git rev-parse *)",
+      "Bash(git ls-files *)",
+      "Bash(git ls-remote *)",
+      "Bash(git merge-base *)",
+      "Bash(git remote -v)",
+      "Bash(git remote get-url *)",
+      "Bash(git config --get *)",
+      "Bash(git config --local --get *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git fetch *)",
+      "Bash(git pull --ff-only *)",
+      "Bash(git switch *)",
+      "Bash(git rebase *)",
+      "Bash(git stash *)",
+      "Bash(git submodule status *)",
+      "Bash(git submodule update *)",
+      "Bash(gh issue view *)",
+      "Bash(gh issue list *)",
+      "Bash(gh issue comment *)",
+      "Bash(gh issue edit *)",
+      "Bash(gh issue develop *)",
+      "Bash(gh pr view *)",
+      "Bash(gh pr list *)",
+      "Bash(gh pr checks *)",
+      "Bash(gh pr diff *)",
+      "Bash(gh pr create *)",
+      "Bash(gh pr comment *)",
+      "Bash(gh run list *)",
+      "Bash(gh run view *)",
+      "Bash(gh run watch *)",
+      "Bash(gh repo view *)",
+      "Bash(gh label list *)",
+      "Bash(gh auth status *)",
+      "Bash(gh project view *)",
+      "Bash(gh project item-list *)",
+      "Bash(gh project field-list *)",
+      "Bash(bash .claude/skills/gh-project-workflow/scripts/start_issue_flow.sh *)",
+      "Bash(bash .claude/skills/gh-project-workflow/scripts/finish_issue_flow.sh *)",
+      "Bash(.shared/bin/kit *)",
+      "Bash(bb .shared/bin/kit *)",
+      "Bash(jq *)"
+    ],
+    "ask": [
+      "Bash(gh pr merge *)",
+      "Bash(bash .claude/skills/gh-project-workflow/scripts/merge_issue_flow.sh *)",
+      "Bash(gh api *)",
+      "Bash(gh issue close *)",
+      "Bash(gh issue delete *)",
+      "Bash(gh pr close *)",
+      "Bash(gh repo edit *)",
+      "Bash(gh release *)",
+      "Bash(gh secret *)",
+      "Bash(gh workflow run *)",
+      "Bash(gh project item-delete *)",
+      "Bash(git reset --hard *)",
+      "Bash(git clean *)",
+      "Bash(git restore *)",
+      "Bash(git checkout -- *)",
+      "Bash(git branch -D *)",
+      "Bash(git push --delete *)",
+      "Bash(git push * --delete *)",
+      "Bash(git checkout -b *)",
+      "Bash(git switch -c *)"
+    ],
+    "deny": [
+      "Bash(gh repo delete *)",
+      "Bash(git push --force *)",
+      "Bash(git push * --force *)",
+      "Bash(git push -f *)",
+      "Bash(git push * -f *)",
+      "Bash(git push * --force)",
+      "Bash(git push * -f)",
+      "Bash(git push * +*)"
+    ],
+    "disableBypassPermissionsMode": "disable"
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'h=\"${CLAUDE_PROJECT_DIR:-.}/.shared/claude/hooks/session-start.sh\"; [ -r \"$h\" ] || { echo \"dev-kit is not checked out (.shared/ is empty). Tell the owner to run: git submodule update --init && .shared/bin/kit init\"; exit 0; }; exec bash \"$h\"'",
+            "timeout": 30,
+            "statusMessage": "Checking dev-kit setup..."
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PROJECT_DIR:-.}/.claude/hooks/pretooluse.sh\"",
+            "timeout": 10,
+            "onFailure": "block",
+            "statusMessage": "Checking delivery flow..."
+          }
+        ]
+      }
+    ]
+  },
+  "env": {
+    "GHWF_DEFAULT_BASE": "main",
+    "GHWF_OWNER": "u473t8",
+    "GHWF_PROJECT_NUMBER": "3",
+    "GHWF_REPO": "shundeev/site",
+    "GHWF_SHOWCASE": "Site"
+  }
+}
