@@ -1,4 +1,4 @@
 # Managed by dev-kit (`kit init`); the code owners come from :owners in kit.edn.
 # With "Require review from Code Owners" in the main ruleset, a pull request merges only
 # with the approval of one of them, whoever else approves it.
-* @u473t8
+* @shundeev/owners

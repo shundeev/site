@@ -13,6 +13,18 @@ public/          served as is: index.html, style.css, favicon, _headers, robots.
 wrangler.jsonc   Cloudflare config (static assets from public/, custom domain)
 ```
 
+## Working on it
+
+The repository mounts [dev-kit](https://github.com/shundeev/dev-kit) at `.shared`: the agent
+rules in `AGENTS.md`, the Claude Code settings and hooks, and the CI checks come from there.
+
+```sh
+git clone --recurse-submodules git@github.com:shundeev/site.git
+cd site
+.shared/bin/kit init     # per-machine setup: git hooks path, the agent's GitHub identity
+.shared/bin/kit doctor   # everything in place?
+```
+
 ## Deploy
 
 ```sh
