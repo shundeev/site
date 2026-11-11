@@ -1,0 +1,4 @@
+# Managed by dev-kit (`kit init`); the owner comes from :owner in kit.edn.
+# The owner reviews every file: with "Require review from Code Owners" in the main ruleset,
+# no pull request merges without their approval, whoever else approves it.
+* @u473t8
