@@ -46,13 +46,13 @@
       "Bash(gh project field-list *)",
       "Bash(bash .claude/skills/gh-project-workflow/scripts/start_issue_flow.sh *)",
       "Bash(bash .claude/skills/gh-project-workflow/scripts/finish_issue_flow.sh *)",
+      "Bash(bash .claude/skills/gh-project-workflow/scripts/merge_issue_flow.sh *)",
       "Bash(.shared/bin/kit *)",
       "Bash(bb .shared/bin/kit *)",
       "Bash(jq *)"
     ],
     "ask": [
       "Bash(gh pr merge *)",
-      "Bash(bash .claude/skills/gh-project-workflow/scripts/merge_issue_flow.sh *)",
       "Bash(gh api *)",
       "Bash(gh issue close *)",
       "Bash(gh issue delete *)",
@@ -100,7 +100,7 @@
     ],
     "PreToolUse": [
       {
-        "matcher": "Bash",
+        "matcher": "Bash|Edit|Write|NotebookEdit|MultiEdit",
         "hooks": [
           {
             "type": "command",
@@ -118,6 +118,7 @@
     "GHWF_OWNER": "u473t8",
     "GHWF_PROJECT_NUMBER": "3",
     "GHWF_REPO": "shundeev/site",
+    "GHWF_REVIEWERS": "shundeev/owners",
     "GHWF_SHOWCASE": "Site"
   }
 }
