@@ -6,6 +6,11 @@ These rules apply to every agent working in this repository (Claude Code, Codex,
 
 - When reporting verification, say exactly what was proven and what was not.
 - Project structure and how to run things: README.md.
+- How a tool or service behaves comes from its current official documentation for the version in
+  use, never from forums or memory, and is then checked: read the documentation, run the command;
+  if the result differs, read the documentation closer; if it is still unclear, run an experiment
+  in a scratch setup. Nothing is taken on faith. Link the page that settled it where a decision
+  depends on it.
 
 ## Delivery
 
@@ -39,6 +44,8 @@ These rules apply to every agent working in this repository (Claude Code, Codex,
 
 - A report to the owner says what changed for them and what is needed from them, in plain words,
   item by item; the details stay in the PR. No jargon tables.
+- A report on a new mechanism starts with the problem it solves and what changes for the owner,
+  then says how it works (#63).
 - Every report after a push ends with the pull request's link.
 - Anything the owner has to do by hand (a setting, a login, a click) goes into a comment on its PR
   as numbered steps: where to click, what to type, what the result looks like, what to do if it
@@ -48,6 +55,8 @@ These rules apply to every agent working in this repository (Claude Code, Codex,
   only a person can. When the fix is mechanical, the code does it itself.
 - A lesson or preference that holds for every project goes into dev-kit through an issue and a PR,
   not only into an agent's memory.
+- A message from the owner that starts with «трение:» (or "friction:") registers friction. Answer
+  it in one line and go on; `kit retro` collects it for the task's retrospective.
 
 ## Decisions
 
