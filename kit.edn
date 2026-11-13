@@ -2,4 +2,7 @@
 {:repo     "shundeev/site"
  :showcase "Site"
  ;; #{:clojure} adds the shared zprint/clj-kondo setup and Clojure rules
- :modules  #{}}
+ :modules  #{}
+ ;; The page as a visitor sees it (tests/visitor.spec.js); CI keeps the screenshots (dev-kit#27)
+ :user-test {:run       "npm ci && npx playwright test"
+             :artifacts "test-results"}}
