@@ -52,23 +52,18 @@
       "Bash(jq *)"
     ],
     "ask": [
-      "Bash(gh pr merge *)",
-      "Bash(gh issue close *)",
+      "Bash(* --skip-retro*)",
       "Bash(gh issue delete *)",
       "Bash(gh pr close *)",
-      "Bash(gh repo edit *)",
+      "Bash(gh pr merge *)",
+      "Bash(gh project item-delete *)",
       "Bash(gh release *)",
+      "Bash(gh repo edit *)",
       "Bash(gh secret *)",
       "Bash(gh workflow run *)",
-      "Bash(gh project item-delete *)",
-      "Bash(git reset --hard *)",
-      "Bash(git clean *)",
-      "Bash(git restore *)",
-      "Bash(git checkout -- *)",
-      "Bash(git branch -D *)",
-      "Bash(git push --delete *)",
-      "Bash(git push * --delete *)",
       "Bash(git checkout -b *)",
+      "Bash(git push * --delete *)",
+      "Bash(git push --delete *)",
       "Bash(git switch -c *)"
     ],
     "deny": [
@@ -121,7 +116,7 @@
     ],
     "PreToolUse": [
       {
-        "matcher": "Bash|Edit|Write|NotebookEdit|MultiEdit",
+        "matcher": "Bash|Edit|Write|NotebookEdit|MultiEdit|Read|Grep|Glob",
         "hooks": [
           {
             "type": "command",
@@ -175,6 +170,17 @@
             "command": "bash -c 'h=\"${CLAUDE_PROJECT_DIR:-.}/.shared/claude/hooks/friction.sh\"; [ -r \"$h\" ] && exec bash \"$h\" PostToolUse; exit 0'"
           }
         ]
+      },
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "timeout": 30,
+            "statusMessage": "Formatting with the project's zprint configuration...",
+            "command": "bash -c 'h=\"${CLAUDE_PROJECT_DIR:-.}/.shared/claude/hooks/format.sh\"; [ -r \"$h\" ] && exec bash \"$h\"; exit 0'"
+          }
+        ]
       }
     ],
     "SessionStart": [
@@ -213,6 +219,17 @@
         ]
       }
     ]
+  },
+  "extraKnownMarketplaces": {
+    "dev-kit": {
+      "source": {
+        "source": "directory",
+        "path": ".shared"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "project-link@dev-kit": true
   },
   "env": {
     "GHWF_DEFAULT_BASE": "main",
