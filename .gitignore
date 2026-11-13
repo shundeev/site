@@ -4,3 +4,4 @@
 /.cpcache/
 /.lsp/.cache/
 /.clj-kondo/.cache/
+/test-results/
