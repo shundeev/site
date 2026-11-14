@@ -2,5 +2,13 @@
   "version": 1,
   "safety": {
     "level": "standard"
+  },
+  "workflow": {
+    "worktree_mode": true
+  },
+  "destructive_command_protection": {
+    "allow_paths": [
+      "~/.claude/jobs"
+    ]
   }
 }
