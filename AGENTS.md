@@ -30,9 +30,9 @@ These rules apply to every agent working in this repository (Claude Code, Codex,
   Never `git checkout -b` / `git switch -c`.
 - Never push to `main`; it accepts pull requests only. A pull request merges only on the
   owner's Approve of its latest commit and only on top of the latest `main`; the ruleset
-  enforces both. The agent never approves. Auto-merge, turned on by `kit finish`, merges
-  once both hold; `kit merge` brings a branch that fell behind up to date (merging
-  `main` in keeps the approval) and closes out.
+  enforces both. The agent never approves. Auto-merge (turned on by `kit finish`, or by the
+  ready workflow for the draft `kit finish` opens) merges once both hold; `kit merge` brings
+  a branch that fell behind up to date (merging `main` in keeps the approval) and closes out.
 - Not part of the flow: answering a question, reading or measuring, continuing an issue that is
   already active, or the owner saying to skip GitHub.
 - A refusal from a hook or a permission rule stops the work and goes to the owner: what you
@@ -44,13 +44,13 @@ These rules apply to every agent working in this repository (Claude Code, Codex,
 
 - A report to the owner says what changed for them and what is needed from them, in plain words,
   item by item; the details stay in the PR. No jargon tables.
-- A report on a new mechanism starts with the problem it solves and what changes for the owner,
-  then says how it works (#63).
+- A report on a design or a new mechanism opens with the concrete incident and what it cost, then
+  what changes for the owner, then how it works (#63).
 - Every report after a push ends with the pull request's link.
-- Anything the owner has to do by hand (a setting, a login, a click) goes into a comment on its PR
-  as numbered steps: where to click, what to type, what the result looks like, what to do if it
-  fails. The report gives only the link; with no PR yet, open a draft PR first. When several PRs
-  need the owner, one step per PR, each named by its title.
+- Anything the owner has to do by hand (a setting, a login, a click) goes into a PR comment
+  starting `## Owner steps`, as numbered steps: where to click, what to type, what the result
+  looks like, what to do if it fails. The report gives only the link; with no PR yet, open a draft
+  PR first. When several PRs need the owner, one step per PR, each named by its title.
 - Every error a tool, script or hook prints says what to do: to the agent, or to the owner when
   only a person can. When the fix is mechanical, the code does it itself.
 - A lesson or preference that holds for every project goes into dev-kit through an issue and a PR,
